@@ -1,0 +1,10 @@
+p {background-color: aqua;}
+.specialparagraph {font-weight: bold; color: red;}
+.highlight {background-color: yellow;}
+.important {font-size: 20px; text-decoration: underline;}
+.note {font-style: italic; color: green;}
+.warning {background-color: orange; font-weight: bold;}
+.info {border: 1px solid blue; padding: 5px;}
+.title {font-size: 24px; font-weight: bold; text-align: center;}
+.subtitle {font-size: 18px; font-weight: semi-bold; text-align: center
+    
