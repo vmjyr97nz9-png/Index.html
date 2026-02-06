@@ -560,25 +560,26 @@ Because he was outstanding in his field. 🌾😂</p>
             <div class="stars">✨💕✨</div>
         </div>
     </div>
-
     <script>
-        function handleYes() {
-            const message = document.getElementById('responseMessage');
-            message.textContent = '🎉 OMG YES! You just made me the happiest person alive! I love you so much! 💕 Let\'s celebrate together! 🎊';
-            message.style.display = 'block';
-
-            // Hide the Maybe Later button
+    let clickCount = 0;
+    
+    function handleYes() {
+        const message = document.getElementById('responseMessage');
+        message.textContent = '🎉 OMG YES! You just made me the happiest person alive! I love you so much! 💕 Let\'s celebrate together! 🎊';
+        message.style.display = 'block';
+        
+        // Hide the Maybe Later button
         const noBtn = document.querySelector('.btn-no');
         noBtn.style.display = 'none';
-            
-            // Add confetti effect
-            for (let i = 0; i < 3; i++) {
-                setTimeout(() => createMultipleConfetti(), i * 500);
-            }
-            createMultipleConfetti();
+        
+        // Add confetti effect
+        for (let i = 0; i < 3; i++) {
+            setTimeout(() => createMultipleConfetti(), i * 500);
         }
+        createMultipleConfetti();
+    }
 
-        function handleNo() {
+    function handleNo() {
         clickCount++;
         const noBtn = document.querySelector('.btn-no');
         noBtn.textContent = 'Oops, try again!';
@@ -591,37 +592,39 @@ Because he was outstanding in his field. 🌾😂</p>
         const randomY = Math.random() * 200 - 100;
         noBtn.style.transform = `translate(${randomX}px, ${randomY}px) scale(${scale})`;
     }
-
         function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.style.position = 'fixed';
-            confetti.style.width = '10px';
-            confetti.style.height = '10px';
-            confetti.style.backgroundColor = '#ff1493';
-            confetti.style.borderRadius = '50%';
-            confetti.style.left = Math.random() * window.innerWidth + 'px';
-            confetti.style.top = '-10px';
-            confetti.style.zIndex = '9999';
-            document.body.appendChild(confetti);
+        const confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        confetti.style.width = '10px';
+        confetti.style.height = '10px';
+        confetti.style.backgroundColor = '#ff1493';
+        confetti.style.borderRadius = '50%';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.top = '-10px';
+        confetti.style.zIndex = '9999';
+        document.body.appendChild(confetti);
 
-            let pos = 0;
-            const interval = setInterval(() => {
-                pos += Math.random() * 5;
-                confetti.style.top = pos + 'px';
-                if (pos > window.innerHeight) {
-                    clearInterval(interval);
-                    confetti.remove();
-                }
-            }, 30);
-        }
-
-        // Create multiple confetti pieces
-        function createMultipleConfetti() {
-            for (let i = 0; i < 50; i++) {
-                setTimeout(createConfetti, i * 30);
+        let pos = 0;
+        const interval = setInterval(() => {
+            pos += Math.random() * 5;
+            confetti.style.top = pos + 'px';
+            if (pos > window.innerHeight) {
+                clearInterval(interval);
+                confetti.remove();
             }
+        }, 30);
+    }
+
+    // Create multiple confetti pieces
+    function createMultipleConfetti() {
+        for (let i = 0; i < 50; i++) {
+            setTimeout(createConfetti, i * 30);
         }
-    </script>
+    }
+</script>
+
+
+    
 </body>
 
 </html>
